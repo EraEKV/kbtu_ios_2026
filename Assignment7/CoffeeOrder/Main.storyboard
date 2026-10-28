@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,49 +12,50 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoffeeOrder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mug" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-01">
-                                <rect key="frame" x="16" y="75" width="361" height="203"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="mug" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-01">
+                                <rect key="frame" x="16" y="105" width="382" height="213"/>
                                 <color key="backgroundColor" red="0.91800000000000004" green="0.86699999999999999" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.48200000000000001" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.48199999999999998" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IMG-01" secondAttribute="height" multiplier="16:9" priority="750" id="CIM-01"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="96" id="CIM-02"/>
+                                </constraints>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="88" weight="regular"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="IMG-01" secondAttribute="height" multiplier="16:9" id="CIM-01"/>
-                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="250" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Flat White" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-T">
-                                <rect key="frame" x="16" y="298" width="263" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Flat White" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-T">
+                                <rect key="frame" x="16" y="339" width="282.66666666666669" height="31.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="₸1 800" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-P">
-                                <rect key="frame" x="291" y="298" width="86" height="29"/>
+                                <rect key="frame" x="310.66666666666669" y="339" width="87.333333333333314" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <color key="textColor" red="0.48200000000000001" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.48199999999999998" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double ristretto with silky steamed milk. Smooth, strong and not too sweet." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-D">
-                                <rect key="frame" x="16" y="335" width="361" height="44"/>
+                                <rect key="frame" x="16" y="378.33333333333331" width="382" height="40.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.41999999999999998" green="0.41999999999999998" blue="0.41999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIZE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-S">
-                                <rect key="frame" x="16" y="403" width="33" height="18"/>
+                                <rect key="frame" x="16" y="443" width="33" height="18"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" red="0.41999999999999998" green="0.41999999999999998" blue="0.41999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-S">
-                                <rect key="frame" x="16" y="429" width="111" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-S">
+                                <rect key="frame" x="16.000000000000007" y="469" width="120.66666666666669" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CS-01"/>
                                 </constraints>
@@ -71,24 +70,8 @@
                                     <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACT-S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" selected="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-M">
-                                <rect key="frame" x="137" y="429" width="119" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="CS-02"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="M · 350 ml" backgroundImage="SizeNormal">
-                                    <color key="titleColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected" backgroundImage="SizeSelected">
-                                    <color key="titleColor" red="0.36199999999999999" green="0.21199999999999999" blue="0.089999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACT-M"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-L">
-                                <rect key="frame" x="266" y="429" width="111" height="48"/>
+                                <rect key="frame" x="277.33333333333331" y="469" width="120.66666666666669" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="CS-03"/>
                                 </constraints>
@@ -104,16 +87,16 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CARD-Q">
-                                <rect key="frame" x="16" y="501" width="361" height="64"/>
+                                <rect key="frame" x="16" y="541" width="382" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-Q">
-                                        <rect key="frame" x="16" y="20" width="76" height="24"/>
+                                        <rect key="frame" x="16" y="20" width="81.666666666666671" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-MN">
-                                        <rect key="frame" x="223" y="10" width="44" height="44"/>
+                                        <rect key="frame" x="240" y="10" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.95699999999999996" green="0.91000000000000003" blue="0.86299999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="CM-01"/>
@@ -133,7 +116,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-N">
-                                        <rect key="frame" x="267" y="20" width="44" height="24"/>
+                                        <rect key="frame" x="284" y="19" width="44" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="CN-01"/>
                                         </constraints>
@@ -142,7 +125,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-PL">
-                                        <rect key="frame" x="311" y="10" width="44" height="44"/>
+                                        <rect key="frame" x="328" y="10" width="44" height="44"/>
                                         <color key="backgroundColor" red="0.95699999999999996" green="0.91000000000000003" blue="0.86299999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="CP-01"/>
@@ -182,8 +165,8 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-O">
-                                <rect key="frame" x="16" y="750" width="361" height="52"/>
-                                <color key="backgroundColor" red="0.48200000000000001" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="16" y="760" width="382" height="52"/>
+                                <color key="backgroundColor" red="0.48199999999999998" green="0.28999999999999998" blue="0.13300000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="CO-01"/>
                                 </constraints>
@@ -198,6 +181,22 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="orderTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACT-O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-M">
+                                <rect key="frame" x="146.66666666666666" y="469" width="120.66666666666666" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="CS-02"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="M · 350 ml" backgroundImage="SizeNormal">
+                                    <color key="titleColor" red="0.10000000000000001" green="0.10000000000000001" blue="0.10000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected" backgroundImage="SizeSelected">
+                                    <color key="titleColor" red="0.36199999999999999" green="0.21199999999999999" blue="0.089999999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sizeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACT-M"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,8 +251,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SizeNormal" width="40" height="40"/>
-        <image name="SizeSelected" width="40" height="40"/>
-        <image name="mug" catalog="system" width="128" height="115"/>
+        <image name="SizeNormal" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="SizeSelected" width="32.333332061767578" height="32.333332061767578"/>
+        <image name="mug" catalog="system" width="128" height="125"/>
     </resources>
 </document>
