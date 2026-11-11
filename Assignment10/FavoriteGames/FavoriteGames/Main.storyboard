@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAV">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NAV-SCENE">
+            <objects>
+                <navigationController id="NAV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="NAV-BAR">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VC" kind="relationship" relationship="rootViewController" id="NAV-ROOT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAV-FR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-700" y="375"/>
+        </scene>
+        <!--Favorite Games-->
+        <scene sceneID="VC-SCENE">
+            <objects>
+                <viewController id="VC" customClass="GamesViewController" customModule="FavoriteGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="114" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TBL" userLabel="Table View">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameCell" id="CELL" customClass="GameCell" customModule="FavoriteGames" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="114"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CELL" id="CV">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="114"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rdr2" translatesAutoresizingMaskIntoConstraints="NO" id="COVER" userLabel="Cover Image View">
+                                                    <rect key="frame" x="16" y="12" width="60" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="C-COVER-W"/>
+                                                        <constraint firstAttribute="height" constant="90" id="C-COVER-H"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TITLE" userLabel="Title Label">
+                                                    <rect key="frame" x="88" y="46" width="256" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="COVER" firstAttribute="leading" secondItem="CV" secondAttribute="leading" constant="16" id="C-COVER-L"/>
+                                                <constraint firstItem="COVER" firstAttribute="centerY" secondItem="CV" secondAttribute="centerY" id="C-COVER-CY"/>
+                                                <constraint firstItem="COVER" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CV" secondAttribute="top" constant="12" id="C-COVER-T"/>
+                                                <constraint firstItem="CV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="COVER" secondAttribute="bottom" constant="12" id="C-COVER-B"/>
+                                                <constraint firstItem="TITLE" firstAttribute="leading" secondItem="COVER" secondAttribute="trailing" constant="12" id="C-TITLE-L"/>
+                                                <constraint firstItem="CV" firstAttribute="trailing" secondItem="TITLE" secondAttribute="trailing" constant="16" id="C-TITLE-R"/>
+                                                <constraint firstItem="TITLE" firstAttribute="centerY" secondItem="CV" secondAttribute="centerY" id="C-TITLE-CY"/>
+                                                <constraint firstItem="TITLE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CV" secondAttribute="top" constant="12" id="C-TITLE-T"/>
+                                                <constraint firstItem="CV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TITLE" secondAttribute="bottom" constant="12" id="C-TITLE-B"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="coverImageView" destination="COVER" id="O-COVER"/>
+                                            <outlet property="titleLabel" destination="TITLE" id="O-TITLE"/>
+                                            <segue destination="DET" kind="show" identifier="showDetail" id="SEG-DETAIL"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VC" id="O-DATASOURCE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SAFE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TBL" firstAttribute="top" secondItem="SAFE" secondAttribute="top" id="C-TBL-T"/>
+                            <constraint firstItem="TBL" firstAttribute="leading" secondItem="SAFE" secondAttribute="leading" id="C-TBL-L"/>
+                            <constraint firstItem="SAFE" firstAttribute="trailing" secondItem="TBL" secondAttribute="trailing" id="C-TBL-R"/>
+                            <constraint firstItem="SAFE" firstAttribute="bottom" secondItem="TBL" secondAttribute="bottom" id="C-TBL-B"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite Games" id="NAV-ITEM"/>
+                    <connections>
+                        <outlet property="tableView" destination="TBL" id="O-TABLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VC-FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+
+        <!--Detail-->
+        <scene sceneID="DET-SCENE">
+            <objects>
+                <viewController id="DET" customClass="DetailViewController" customModule="FavoriteGames" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DV">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSCROLL" userLabel="Scroll View">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DCONTENT" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="700"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rdr2" translatesAutoresizingMaskIntoConstraints="NO" id="DCOVER" userLabel="Cover Image View">
+                                                <rect key="frame" x="76.5" y="16" width="240" height="360"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="DCOVER" secondAttribute="height" multiplier="2:3" id="DCOVER-R"/>
+                                                    <constraint firstAttribute="height" constant="360" id="DCOVER-H"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTITLE" userLabel="Title Label">
+                                                <rect key="frame" x="16" y="392" width="361" height="34"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSUB" userLabel="Subtitle Label">
+                                                <rect key="frame" x="16" y="434" width="361" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DRATING" userLabel="Rating Stack">
+                                                <rect key="frame" x="126.5" y="466" width="140" height="24"/>
+                                                <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DS1" userLabel="Star 1">
+                                                <rect key="frame" x="0" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="DS1-W"/>
+                                                    <constraint firstAttribute="height" constant="24" id="DS1-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DS2" userLabel="Star 2">
+                                                <rect key="frame" x="28" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="DS2-W"/>
+                                                    <constraint firstAttribute="height" constant="24" id="DS2-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DS3" userLabel="Star 3">
+                                                <rect key="frame" x="56" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="DS3-W"/>
+                                                    <constraint firstAttribute="height" constant="24" id="DS3-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DS4" userLabel="Star 4">
+                                                <rect key="frame" x="84" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="DS4-W"/>
+                                                    <constraint firstAttribute="height" constant="24" id="DS4-H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DS5" userLabel="Star 5">
+                                                <rect key="frame" x="112" y="0.0" width="24" height="24"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="24" id="DS5-W"/>
+                                                    <constraint firstAttribute="height" constant="24" id="DS5-H"/>
+                                                </constraints>
+                                            </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDESC" userLabel="Description Label">
+                                                <rect key="frame" x="16" y="506" width="361" height="178"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="DCOVER" firstAttribute="top" secondItem="DCONTENT" secondAttribute="top" constant="16" id="DC-01"/>
+                                            <constraint firstItem="DCOVER" firstAttribute="centerX" secondItem="DCONTENT" secondAttribute="centerX" id="DC-02"/>
+                                            <constraint firstItem="DTITLE" firstAttribute="top" secondItem="DCOVER" secondAttribute="bottom" constant="16" id="DC-03"/>
+                                            <constraint firstItem="DTITLE" firstAttribute="leading" secondItem="DCONTENT" secondAttribute="leading" constant="16" id="DC-04"/>
+                                            <constraint firstAttribute="trailing" secondItem="DTITLE" secondAttribute="trailing" constant="16" id="DC-05"/>
+                                            <constraint firstItem="DSUB" firstAttribute="top" secondItem="DTITLE" secondAttribute="bottom" constant="8" id="DC-06"/>
+                                            <constraint firstItem="DSUB" firstAttribute="leading" secondItem="DCONTENT" secondAttribute="leading" constant="16" id="DC-07"/>
+                                            <constraint firstAttribute="trailing" secondItem="DSUB" secondAttribute="trailing" constant="16" id="DC-08"/>
+                                            <constraint firstItem="DRATING" firstAttribute="top" secondItem="DSUB" secondAttribute="bottom" constant="12" id="DC-09"/>
+                                            <constraint firstItem="DRATING" firstAttribute="centerX" secondItem="DCONTENT" secondAttribute="centerX" id="DC-10"/>
+                                            <constraint firstItem="DDESC" firstAttribute="top" secondItem="DRATING" secondAttribute="bottom" constant="20" id="DC-11"/>
+                                            <constraint firstItem="DDESC" firstAttribute="leading" secondItem="DCONTENT" secondAttribute="leading" constant="16" id="DC-12"/>
+                                            <constraint firstAttribute="trailing" secondItem="DDESC" secondAttribute="trailing" constant="16" id="DC-13"/>
+                                            <constraint firstAttribute="bottom" secondItem="DDESC" secondAttribute="bottom" constant="24" id="DC-14"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DCONTENT" firstAttribute="top" secondItem="DSCROLL" secondAttribute="top" id="DS-01"/>
+                                    <constraint firstItem="DCONTENT" firstAttribute="leading" secondItem="DSCROLL" secondAttribute="leading" id="DS-02"/>
+                                    <constraint firstAttribute="trailing" secondItem="DCONTENT" secondAttribute="trailing" id="DS-03"/>
+                                    <constraint firstAttribute="bottom" secondItem="DCONTENT" secondAttribute="bottom" id="DS-04"/>
+                                    <constraint firstItem="DCONTENT" firstAttribute="width" secondItem="DSCROLL" secondAttribute="width" id="DS-05"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DSAFE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DSCROLL" firstAttribute="top" secondItem="DSAFE" secondAttribute="top" id="DV-01"/>
+                            <constraint firstItem="DSCROLL" firstAttribute="leading" secondItem="DSAFE" secondAttribute="leading" id="DV-02"/>
+                            <constraint firstItem="DSAFE" firstAttribute="trailing" secondItem="DSCROLL" secondAttribute="trailing" id="DV-03"/>
+                            <constraint firstItem="DSAFE" firstAttribute="bottom" secondItem="DSCROLL" secondAttribute="bottom" id="DV-04"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Game" largeTitleDisplayMode="never" id="DET-ITEM"/>
+                    <connections>
+                        <outlet property="coverImageView" destination="DCOVER" id="DO-COVER"/>
+                        <outlet property="descriptionLabel" destination="DDESC" id="DO-DESC"/>
+                        <outletCollection property="starImageViews" destination="DS1" collectionClass="NSMutableArray" id="DO-S1"/>
+                        <outletCollection property="starImageViews" destination="DS2" collectionClass="NSMutableArray" id="DO-S2"/>
+                        <outletCollection property="starImageViews" destination="DS3" collectionClass="NSMutableArray" id="DO-S3"/>
+                        <outletCollection property="starImageViews" destination="DS4" collectionClass="NSMutableArray" id="DO-S4"/>
+                        <outletCollection property="starImageViews" destination="DS5" collectionClass="NSMutableArray" id="DO-S5"/>
+                        <outlet property="subtitleLabel" destination="DSUB" id="DO-SUB"/>
+                        <outlet property="titleLabel" destination="DTITLE" id="DO-TITLE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DET-FR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rdr2" width="600" height="900"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
